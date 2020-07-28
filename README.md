@@ -44,3 +44,26 @@ For install by gem `rails`, I only executed
 $ rails new app
 ```
 And create the files in the folder `app`
+
+## Week 2
+
+### Mon 27, July 2020 *[How works the controllers?]*
+Rais is a MVC framework, which means that is composed by three principles elements, Models, Views and Controllers. Today i read about controllers, how create them.
+When framework is used, we create some files for use like the controllers,we dont know if the files create affect how framework works. For this purpose, some frameworks have integrated tools for created yours elements.
+Rails Generator create many elements, like models, assets and controllers, in this case, I will generate a controller. How I'm using `bundle gem`, when I want to generate a controller, after opening the working directory in the console, i execute
+```sh
+$ bundle exec rails generate controller Test
+```
+After this, the console show a list with the files created and modified, like see in the next image
+
+![MYFIRSTCONTROLLER](img/myfirstcontroller.png)
+
+In addition to our controller, also are create a view folder in `app/views/test`, a test file in `test/controllers/test_controller_test.rb`, a sass file in `app/assets/stylesheets/test.scss`, and an helper class in `app/helpers/test_helper.rb`. This extra files I will explain them in a future.
+When our controller are created, our file is in `app/controllers` named `test_controller.rb` looks like:
+
+```sh
+1   class TestController < ApplicationController
+2   end
+3   
+```
+And it's done our controller are created. But for now, it does nothing. we will continue working with this file, in a future entrances.
