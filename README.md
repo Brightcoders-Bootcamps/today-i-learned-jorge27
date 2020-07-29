@@ -67,3 +67,21 @@ When our controller are created, our file is in `app/controllers` named `test_co
 3   
 ```
 And it's done our controller are created. But for now, it does nothing. we will continue working with this file, in a future entrances.
+
+### Tuesday 28, July 2020 *[How works the controllers?, part 2]*
+Yesterday, I learned how create a controller in rais, but, controller does nothing, today I learned how use a controller.
+First, when I write a url in the browser, this is call to our controller, the controller process our data and send to view for show in browser. 
+With our controller create yesterday, we must register it in file `config/routes.rb` to be able to use our controller, write the next lines in `routes` file
+```sh
+1   Rails.application.routes.draw do
+2     get 'test/index'
+3   ...
+```
+After this, in our console, we write
+```sh
+$   bundle exec rails server
+```
+And now, we go to our browser and write the url `localhost:3000/test`, the browser most show some like:
+![WRONG_CALL](img/wrong_call.png)
+
+And it is done, our controller is registered, but still need to create the views for show something
