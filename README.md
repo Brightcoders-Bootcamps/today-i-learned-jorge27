@@ -85,3 +85,18 @@ And now, we go to our browser and write the url `localhost:3000/test`, the brows
 ![WRONG_CALL](img/wrong_call.png)
 
 And it is done, our controller is registered, but still need to create the views for show something
+
+### Thursday 30, July 2020 *[My first view]*
+When we created our controller using the console, some files were created, among these was created a folder in `app/views` directory. This folder will contains our `html` and `erb` files.
+In the last entry, we registered the `test` controller in the `config/routes.rb` file, when the controller was registered, we only registered a `GET HTTP` request, this means that when we write a URL, the browser will execute a request , in this case a `GET HTTP` request, after this the framework search in our routes file and if a match is found it returns the data recorded inside the method in the controller.
+Now, for see how this works, only we create a file in `app/views/test` named `index.html.erb` and write
+```sh
+1   <h1>Hello, World!</h1>
+```
+We must make sure that, the server rails is running, if that is not the case, go to the console and change to the work directory, an then execute
+```sh
+$   bundle exec rails server
+```
+After this we go to our browser and write `localhost:3000/test/index`, and should see the next
+![myfirtsview](img/myfirstview.png)
+And it's done, our view are created!
