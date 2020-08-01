@@ -100,3 +100,24 @@ $   bundle exec rails server
 After this we go to our browser and write `localhost:3000/test/index`, and should see the next
 ![myfirtsview](img/myfirstview.png)
 And it's done, our view are created!
+
+### Friday 31, July 2020 *[My first view, passing data from controller to view]*
+Today we learned how pass data from controller to view, this is very helpful as the controller can process information from the backend and present the information processed to present it to the view so that the user doesnt have process it by himself or doesn't not see the process in case that is require it.
+In fact, to send data to the view only need be initialized the variable in the corespondient method, and how is the ruby style, the last variable declaration will containt the data to render in the view.
+In the last post, we created a `app/views/test/index.html.erb` file, well, today it will update, I added the line `<h1><% = @hello %>, <% = @world %></h1>`, to the file and now it will look like
+```sh
+1   <h1>Hello, World!</h1>
+2   <h1><%= @hello %>, <%= @world %></h1>
+```
+Up to this point, our view shows nothing new, because our controller is not updated add the lines '3' and '4' as seen below
+```sh
+1   class TestController < ApplicationController
+2   	def index
+3   		@hello = 'Welcome'
+4   		@world = 'my love'
+5   	end
+6   end
+7   
+```
+Now update the browser and our view show the bellow
+![PASSDATA](img/myfirstview_passdata.png)
