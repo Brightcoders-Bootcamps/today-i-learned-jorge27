@@ -121,3 +121,9 @@ Up to this point, our view shows nothing new, because our controller is not upda
 ```
 Now update the browser and our view show the bellow
 ![PASSDATA](img/myfirstview_passdata.png)
+## Week 3
+
+### Tuesday 4, August 2020 *[Migrations]*
+When developing a software, it is normally needed a database upgrade, in orden to add tables or fields or change the data type for the felds that we are going to add, etc. Also, when use migrations not need to know many syntaxis of the database controllers.
+The migrations are normally part of an ORM (object-relational mapping) of the database. This makes our work easier because we don't need to use a diferent sintaxis for the different database controllers exisisting, instead migrations, translate our code in orden to create the necessary queries to the database.
+Something that is pretty important to emphasize is when use of migrations we can versioned our database with git or svn.
