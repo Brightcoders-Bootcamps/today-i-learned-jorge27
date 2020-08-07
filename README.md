@@ -121,9 +121,65 @@ Up to this point, our view shows nothing new, because our controller is not upda
 ```
 Now update the browser and our view show the bellow
 ![PASSDATA](img/myfirstview_passdata.png)
+
 ## Week 3
 
 ### Tuesday 4, August 2020 *[Migrations]*
 When developing a software, it is normally needed a database upgrade, in orden to add tables or fields or change the data type for the felds that we are going to add, etc. Also, when use migrations not need to know many syntaxis of the database controllers.
 The migrations are normally part of an ORM (object-relational mapping) of the database. This makes our work easier because we don't need to use a diferent sintaxis for the different database controllers exisisting, instead migrations, translate our code in orden to create the necessary queries to the database.
 Something that is pretty important to emphasize is when use of migrations we can versioned our database with git or svn.
+
+### Wednesday 5, August 2020 *[Creating our database]*
+Rails uses databases managed by SQLite, the SQLite database files are hosted in our working directory, normally this is located in `db/development.sqlite3`, in this database we will host the information of our application, we must take it into account Please note that it will be necessary to install SQLite on our system.
+For more information about SQLite, see the following [link](https://sqlite.org/index.html)
+To verify that SQLite is installed, we can run it from our console.
+```sh
+$   sqlite3
+```
+and shows us next
+![SQLITE](img/sqlite.png)
+for exit, write the follow
+```sh
+sqlite>.quit
+```
+After this we go to our working directory, and we write the following
+```sh
+$   bundle exec rails db:migrate
+```
+This will generate our first migration, although no migration has been created yet, this will create our database `development.sqlite3` and also create a file called` schema.rb` in our directory `db`.
+Now, in order to access our database, we write
+```sh
+$   sqlite3 db/development.sqlite3
+```
+And to check what was written in the database after the migration, we write
+```sh
+sqlite>.fullschema   
+```
+and show us the next
+![SULLSCHEMA](img/fullschema.png)
+
+### Thursday 6, August 2020 *[How to create migrations]*
+Create a migration it's easy, it's like a controller, we needed to use a `rails gem`. After open the console in out work directory, write
+```sh
+$   bundle exec rails generate migration Users
+```
+And it's done, migration is created in folder `db/migrate`. In this case my file was created with the name `20200806235414_users.rb`.
+Now, for create a new table, we write in our migration the next lines
+```sh
+1   class users < ActiveRecord::Migrations[6.0]
+2     def change
+3       create_table :users do |t|
+4         t.string :name
+5         t.string :email
+6         t.string :password
+7         t.timestamps
+8       end
+9     end
+10  end
+11
+```
+And now, like yesterday, execute the migrations with
+```sh
+$   bundle exec rails db:migration
+```
+If, everythigs was correct, in our database must be exists a table named `users`, for check this, use a `SQLite` like yesterday.
