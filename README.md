@@ -180,6 +180,15 @@ Now, for create a new table, we write in our migration the next lines
 ```
 And now, like yesterday, execute the migrations with
 ```sh
-$   bundle exec rails db:migration
+$   bundle exec rails db:migrate
 ```
 If, everythigs was correct, in our database must be exists a table named `users`, for check this, use a `SQLite` like yesterday.
+
+### Friday 7, August 2020 *[Models]*
+In MVC's architecture, a model is a part in framework who's linked the database with the controllers or the views.
+Models are very useful for call a database and not use a sql syntax and with this, prevent a sql inyection attack.
+For create a migration write in console
+```sh
+$   bundle exec rails generate model User
+```
+After this, file `user.rb` was created in folder `app/models/`
