@@ -192,3 +192,32 @@ For create a migration write in console
 $   bundle exec rails generate model User
 ```
 After this, file `user.rb` was created in folder `app/models/`
+
+### Week 4
+
+## Mon 17, August 2020 *[Use bootstrap in rails]*
+Bootstrap is a very popular responsive framework for a Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.
+More info [here](https://getbootstrap.com)
+For use bootstrap you need to install 3 gems, `jquery-rails`, `popper_js` and `bootstrap`. To install the gems, append the next lines to Gemfile
+```sh
+...
+18  gem 'jquery-rails'
+19  gem 'popper_js'
+20  gem 'bootstrap', '~> 4.5.2'
+...
+```
+After this, execute the next command 
+```sh
+$   yarn install --check-files
+```
+after this append in `app/javascript/packs/application.js` the next lines
+```sh
+9   require("jquery3")
+10  require("popper")
+11  require("bootstrap")
+....
+```
+Later rename the file `app/assets/stylesheets/application.css` to `app/assets/stylesheets/application.scss`, then append the follow line to `app/assets/stylesheets/application.scss` file
+```sh
+7   @import "bootstrap"
+```
