@@ -221,3 +221,25 @@ Later rename the file `app/assets/stylesheets/application.css` to `app/assets/st
 ```sh
 7   @import "bootstrap"
 ```
+
+### Week 5
+
+## Mon 24, August 2020 *[How to use a Fontawesome]*
+Fontawesome is a very popular big library that contain very much icons ready to use, this make easy the developers work and web designers. The use of this icons make a web pages be more accessibility for much people with some type of visual disfunction and make a site more friendly.
+To use this library we be install with `yarn`, to install it will need to execute 
+```sh
+$   yarn add @fortawesome/fontawesome-free
+```
+After this, we ned to add the library to `app/javascript/packs/application.js` file the next line
+```sh
+15  require("@fortawesome/fontawesome-free")
+```
+for finish we needed append the next lines to `app/assets/application.scss` file
+```sh
+17 $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+18 @import '@fortawesome/fontawesome-free/scss/fontawesome';
+19 @import '@fortawesome/fontawesome-free/scss/regular';
+20 @import '@fortawesome/fontawesome-free/scss/solid';
+21 @import '@fortawesome/fontawesome-free/scss/brands';
+```
+And it's done, we can use a fontawesome library.
